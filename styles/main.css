@@ -1,0 +1,188 @@
+@layer reset, init, design;
+
+@import url(normalize.css) layer(reset);
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap) layer(init);
+
+@layer init {
+    :root {
+        --primary: #66d4d4;
+        --text: #000000;
+        --black: #000000;
+        --light: #FFFFFF;
+        --gray: #3B3E40;
+    }
+    html {
+        font-family: "Open Sans", sans-serif;
+        color: var(--black);
+        font-weight: 400;
+        scroll-behavior: smooth;
+    }
+    .page__logo::before {
+        content: "";
+        display: block;
+        background: center / contain no-repeat transparent;
+        /*
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        */
+        background-image: url("../images/logo.svg");
+        width: 2em;
+        height: 1em;
+        font-size: 1.5em;
+    }
+    .page__logo > span {
+        display: none;
+    }
+}
+
+/* VRSTVA PRO VAŠE STYLY */
+@layer design {    
+    .button {
+        display: inline-block;
+        padding: 1em 2em;
+        text-decoration: none;
+        border-radius: .5em;
+        font-weight: 700;
+    }
+    .button--secondary{
+        background-color: var(--light);
+        color: var(--black);
+    }
+    .button--secondary:hover{
+        background-color: var(--black);
+        color: var(--light);
+    }
+    .button--primary{
+        background-color: var(--primary);
+        color: var(--light)
+    }
+    .button--primary:hover{
+        background-color: var(--black);
+        color: var(--primary)
+    }
+    .picture-box{
+        margin: 1em 0;
+    }
+    .page__section{
+        padding: 1em;
+    }
+    .picture-box__caption{
+        color: var(--gray);
+        margin:1em;
+        margin-bottom:2.5em ;
+        font-size: 0.8em;
+        text-align: center;
+    }
+    .page__header {
+        padding: calc(1em + 5%);
+        background-image: url(../images/header-2560w.webp);
+        background-size: cover;
+        background-position:top center;
+        color: var(--light);
+        padding-top:0em;
+    }
+    .page__intro {
+        padding-top: 14.4em;
+        max-width: 45em;
+        font-size: 1.1em
+
+    }
+    .img-responsive {
+        display: block;
+        width: 100%;
+    }
+    .page__content{
+        max-width: 60em;
+        margin: 0em auto;
+    }
+    footer {
+        padding: 2em 2em 2em 1em;
+        background-color: var(--gray);
+        color: var(--light);
+        text-align: center;
+        font-size: 0.8em;
+        margin:0;
+        width: auto;
+    }
+    .page__logo {
+        padding-top:0.5em;
+        display: block;
+        width: 4em;
+        margin:auto;
+        font-size: 2em;
+    }
+    p{
+        font-size: 1em;
+    }
+    h1{
+        font-size:4em;
+    }
+    h2{
+        margin-top:2em;
+        font-size:2.3em;
+    }
+    .h3 {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-block-start:1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+    .highlight-box{
+        padding: 2em;
+        border: var(--primary) 3px solid;
+    }
+    .background-box{
+        background-color: var(--gray);
+        text-align: center;
+        color:var(--light);
+        font-weight: bold;
+        padding-top:3em;
+        padding-bottom: 3em;
+    }
+    .background-box--mini{
+        font-size: 2.5em;   
+        margin-bottom: 0em;
+    }
+    .background-box--text{
+        font-size:0.8em;
+    }
+    .background-box--max{
+        font-size: 2.8em;
+        font-weight: bolder;
+    }
+    
+    .list > li{
+        font-size: 1.1em;
+        width:25em;
+        margin: 0.5em 0;
+        margin-left: 1.5em;
+    }
+    .list > li::marker{
+        color: var(--primary);
+        font-size: 1.5em;
+    }
+    .panel{
+        width:auto;
+        max-width: 20em;
+        display:inline-flex;
+        vertical-align: top;
+    }
+    .gallery{
+        --margin: 1em;
+        margin:calc(-1 * var(--margin))
+    }
+    .gallery__item{
+        display: inline-block;
+        width: calc(100% - 2 * var(--margin));
+        margin:var(--margin)
+    }        
+   
+    @media (min-width: 768px){
+ .gallery__item--50w{
+        width: calc(50% - 2 * var(--margin));
+        }
+    }
+}
